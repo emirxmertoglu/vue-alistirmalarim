@@ -23,6 +23,31 @@ window.addEventListener('load', () => {
                 this.cart.push(item[0])
             }
         },
+        computed: {
+            savedText() {
+                if (this.saved.length > 1) {
+                    return 'items'
+                }
+                else {
+                    return 'item'
+                }
+            },
+            cartText() {
+                if (this.cart.length > 1) {
+                    return 'items'
+                }
+                else {
+                    return 'item'
+                }
+            },
+            cartTotal() {
+                let total = 0
+                this.cart.forEach((item) => {
+                    total += parseFloat(item.price, 10)
+                });
+                return total.toFixed(2)
+            }
+        },
         created() {
             fetch('./data.json')
                 .then((res) => { return res.json() })
@@ -31,16 +56,6 @@ window.addEventListener('load', () => {
                     this.cart = res.cart
                     this.saved = res.saved
                 })
-        },
-        computed: {
-            textChanger: function () {
-                if (this.saved.length > 1) {
-                    return 'items'
-                }
-                else {
-                    return 'item'
-                }
-            }
         },
     })
 })
