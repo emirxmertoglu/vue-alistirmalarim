@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./app.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        h1 {
+            color: violet;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vcloak" v-cloak class="hidden"></div>
+
+    <div id="nextTick">
+        <h1 id="emir">{{emir}}</h1>
+        <button @click="getAction">Get Action</button>
+    </div>
+
+    <div id="modifiers">
+        <input type="text" v-model="message" @keyup.enter="click">
+        <button @click.alt="click">Click</button>
+        <a href="/foo" @click.prevent="click">Click</a>
+        <input type="text" @keyup.a="click" v-model="message">
+    </div>
+
+    <div id="filters">
+        <p>{{name | toUpper}}</p>
+        <p>{{price | withTax | toUpper}}</p>
+    </div>
+</body>
+
+</html>
