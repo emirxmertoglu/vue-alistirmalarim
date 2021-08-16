@@ -110,6 +110,9 @@ export default {
 
 <style>
 .details {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
   color: #fff;
 }
 
@@ -150,7 +153,7 @@ export default {
 
 .ticket-button {
   position: absolute;
-  top: 0;
+  top: 15px;
   right: 15px;
 }
 </style>

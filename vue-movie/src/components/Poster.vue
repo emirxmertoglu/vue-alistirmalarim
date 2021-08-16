@@ -21,5 +21,6 @@ export default {
 <style>
 .poster {
   width: 100%;
+  border-radius: 15px;
 }
 </style>
